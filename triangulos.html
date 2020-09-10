@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <title> tipos de triangulos</title>
+    </head>
+    <body>
+        <div>
+            <input placeholder="Digite o valor do angulo a" type="text"><br>
+            <input placeholder="Digite o valor do angulo b" type="text"><br>
+            <input placeholder="Digite o valor do angulo c" type="text"><br>
+            <button> Pronto! </button>
+        </div>
+    <script>
+/*Adicionando o evento de clique ao botão pelo querySelector*/
+document.querySelector('button').addEventListener('click', function(){
+    /*querySelectorAll criar um array com os elementos de categoria input e estão sendo convertidos para parseInt = typeOf number */
+ let divs = document.querySelectorAll('input');
+        let a = parseInt(divs[0].value);
+        let b = parseInt(divs[1].value);
+        let c = parseInt(divs[2].value);
+        /*condição de ser um triangulo*/
+ if((a < (b + c)) && (b < (a + c)) && (c < (b + a))){
+
+     /*classificação de alguns tipos de tringulos*/
+        if((b == a) && (b == c )){
+            alert('Triangulo equilatero');
+        }else   
+        if((a == b) || (a == c) || (c == b)){
+            alert('Triangulo isosceles'); 
+        }else{
+            alert('Triangulo escaleno'); 
+        }
+    }else{
+            alert("não é um triagulo");
+        }        
+});  
+    </script>
+    </body>
+</html>
